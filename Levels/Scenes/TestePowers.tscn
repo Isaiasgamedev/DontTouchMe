@@ -1,0 +1,585 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Characters/Player/Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Player/Assets/Movement/Front1.png" type="Texture" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Characters/Player/Assets/Hurt/face.png" type="Texture" id=4]
+[ext_resource path="res://Assets Global/Tiles/coin1.png" type="Texture" id=5]
+[ext_resource path="res://Characters/Player/Assets/Hurt/face2.png" type="Texture" id=6]
+[ext_resource path="res://Characters/Player/Assets/HUD/bg.png" type="Texture" id=7]
+[ext_resource path="res://Characters/Player/Assets/Buttons/2.png" type="Texture" id=8]
+[ext_resource path="res://Characters/Player/Assets/Buttons/1.png" type="Texture" id=9]
+[ext_resource path="res://Assets Global/Needs/Start.png" type="Texture" id=10]
+[ext_resource path="res://Assets Global/Fonts/04B_30__.TTF" type="DynamicFontData" id=11]
+
+[sub_resource type="Animation" id=17]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("DTM/Dont:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DTM/Touch:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("DTM/Me:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DTM/Me:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 156, 241 ), Vector2( 66, 216 ), Vector2( 156, 241 ), Vector2( 66, 216 ), Vector2( 156, 241 ), Vector2( 66, 216 ), Vector2( 156, 241 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("DTM/Me:rect_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("DTM/Sprite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("DTM/Sprite:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.3, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("DTM/Sprite:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 6 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Animhud:playback_speed")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=18]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Startimage:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Startimage:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4, 0.8, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=19]
+size = 100
+outline_size = 3
+outline_color = Color( 0.0313726, 0, 0, 1 )
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 50
+outline_size = 3
+outline_color = Color( 0.0196078, 0, 0, 1 )
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 50
+outline_size = 3
+outline_color = Color( 0.027451, 0.027451, 0.027451, 1 )
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 100
+outline_size = 10
+outline_color = Color( 0.027451, 0.027451, 0.027451, 1 )
+font_data = ExtResource( 11 )
+
+[sub_resource type="Animation" id=23]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Button:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.5, 1.5 ), Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Button:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 560, 1134 ), Vector2( 607, 1181 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Button:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Button:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ON:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("OFF:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("ON:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("OFF:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("OFF:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("ON:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=24]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Weapon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Weapon:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.823529, 0.0745098, 0.0745098, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Weapon:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Weapon:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.196078 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Weapon:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Weapon:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Weapon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Weapon:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Weapon:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 373.352, 769.332 )
+teste = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="bg" type="Sprite" parent="HUD"]
+scale = Vector2( 1, 0.336667 )
+texture = ExtResource( 7 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Animhud" type="AnimationPlayer" parent="HUD"]
+anims/Dont = SubResource( 17 )
+anims/Start = SubResource( 18 )
+
+[node name="Start" type="Label" parent="HUD"]
+margin_left = 320.0
+margin_top = 129.0
+margin_right = 414.0
+margin_bottom = 230.0
+custom_fonts/font = SubResource( 19 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="HUD"]
+margin_left = 66.0
+margin_top = 6.0
+margin_right = 160.0
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 20 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score2" type="Sprite" parent="HUD"]
+position = Vector2( 36, 28 )
+scale = Vector2( 5.5, 5.5 )
+texture = ExtResource( 5 )
+
+[node name="Timer" type="Label" parent="HUD"]
+margin_left = 320.0
+margin_top = 6.0
+margin_right = 414.0
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 20 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skill" type="Label" parent="HUD"]
+margin_left = 559.0
+margin_top = 6.0
+margin_right = 653.0
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 20 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Weapon" type="Sprite" parent="HUD"]
+modulate = Color( 0.823529, 0.0745098, 0.0745098, 1 )
+position = Vector2( 668, 33 )
+texture = ExtResource( 3 )
+
+[node name="DTM" type="Node2D" parent="HUD"]
+visible = false
+
+[node name="Dont" type="Label" parent="HUD/DTM"]
+visible = false
+margin_left = 38.0
+margin_top = 230.0
+margin_right = 414.0
+margin_bottom = 331.0
+custom_fonts/font = SubResource( 21 )
+text = "DON'T"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Touch" type="Label" parent="HUD/DTM"]
+visible = false
+margin_left = 284.158
+margin_top = 230.0
+margin_right = 660.158
+margin_bottom = 331.0
+custom_fonts/font = SubResource( 21 )
+text = "TOUCH"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Me" type="Label" parent="HUD/DTM"]
+visible = false
+modulate = Color( 0.980392, 0.00784314, 0.00784314, 1 )
+margin_left = 156.0
+margin_top = 241.0
+margin_right = 532.0
+margin_bottom = 446.0
+rect_pivot_offset = Vector2( 0.0237732, -0.260376 )
+custom_fonts/font = SubResource( 22 )
+text = "ME"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="HUD/DTM"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+scale = Vector2( 46, 46 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Button" type="TouchScreenButton" parent="HUD"]
+position = Vector2( 560, 1134 )
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 9 )
+
+[node name="ON" type="TouchScreenButton" parent="HUD"]
+visible = false
+position = Vector2( 526, 1181 )
+normal = ExtResource( 9 )
+
+[node name="OFF" type="TouchScreenButton" parent="HUD"]
+visible = false
+self_modulate = Color( 0.00392157, 0, 0.0196078, 1 )
+position = Vector2( 621, 1181 )
+normal = ExtResource( 9 )
+
+[node name="AnimButton" type="AnimationPlayer" parent="HUD"]
+anims/Change = SubResource( 23 )
+
+[node name="AnimWeapon" type="AnimationPlayer" parent="HUD"]
+anims/Wp00 = SubResource( 24 )
+anims/Wp01 = SubResource( 25 )
+anims/Wp02 = SubResource( 26 )
+
+[node name="Pause" type="Sprite" parent="HUD"]
+position = Vector2( 364, 77 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 8 )
+
+[node name="Startimage" type="Sprite" parent="HUD"]
+visible = false
+position = Vector2( 358, 184 )
+texture = ExtResource( 10 )
+[connection signal="pressed" from="HUD/Button" to="Player" method="_on_Button_pressed"]
+[connection signal="pressed" from="HUD/ON" to="Player" method="_on_ON_pressed"]
+[connection signal="pressed" from="HUD/OFF" to="Player" method="_on_OFF_pressed"]
